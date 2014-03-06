@@ -3,7 +3,7 @@
 class Cms::Page < ActiveRecord::Base
   include Cms::Base
   
-  cms_acts_as_tree :counter_cache => :children_count
+  cms_acts_as_tree
   cms_is_categorized
   cms_is_mirrored
   cms_manageable
@@ -50,7 +50,7 @@ class Cms::Page < ActiveRecord::Base
     out << [ "#{spacer*depth}#{current_page.label}", current_page.id ] unless current_page == page
     current_page.children.each do |child|
       out += options_for_select(site, page, child, depth + 1, exclude_self, spacer)
-    end if current_page.children_count.nonzero?
+    end if current_page.children.count.nonzero?
     return out.compact 
   end
   

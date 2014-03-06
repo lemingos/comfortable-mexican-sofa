@@ -54,7 +54,6 @@ class Cms::ContentControllerTest < ActionController::TestCase
     assert_equal '/',             json_response['full_path']
     assert_equal content,         json_response['content_cache']
     assert_equal 0,               json_response['position']
-    assert_equal 1,               json_response['children_count']
     assert_equal true,            json_response['is_published']
   end
 

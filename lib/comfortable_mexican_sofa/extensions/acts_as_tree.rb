@@ -17,7 +17,7 @@ module ComfortableMexicanSofa::ActsAsTree
       belongs_to :parent,
         :class_name     => name, 
         :foreign_key    => configuration[:foreign_key],
-        :counter_cache  => configuration[:counter_cache],
+        :counter_cache  => nil,
         :touch          => configuration[:touch]
         
       has_many :children,
