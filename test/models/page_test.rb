@@ -142,29 +142,6 @@ class CmsPageTest < ActiveSupport::TestCase
     assert_equal '/updated-page/test-page-1/test-page-4', page_4.full_path
   end
   
-  def test_children_count_updating
-    page_1 = cms_pages(:default)
-    page_2 = cms_pages(:child)
-    assert_equal 1, page_1.children_count
-    assert_equal 0, page_2.children_count
-    
-    page_3 = cms_sites(:default).pages.create!(new_params(:parent => page_2))
-    page_1.reload; page_2.reload
-    assert_equal 1, page_1.children_count
-    assert_equal 1, page_2.children_count
-    assert_equal 0, page_3.children_count
-    
-    page_3.update_attributes!(:parent => page_1)
-    page_1.reload; page_2.reload
-    assert_equal 2, page_1.children_count
-    assert_equal 0, page_2.children_count
-    
-    page_3.destroy
-    page_1.reload; page_2.reload
-    assert_equal 1, page_1.children_count
-    assert_equal 0, page_2.children_count
-  end
-  
   def test_cascading_destroy
     assert_difference 'Cms::Page.count', -2 do
       assert_difference 'Cms::Block.count', -2 do
