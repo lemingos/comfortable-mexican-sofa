@@ -1,4 +1,4 @@
-class Admin::Cms::SnippetsController < Admin::Cms::BaseController
+class Admins::Cms::SnippetsController < Admins::Cms::BaseController
 
   before_action :build_snippet, :only => [:new, :create]
   before_action :load_snippet,  :only => [:edit, :update, :destroy]

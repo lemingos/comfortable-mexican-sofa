@@ -1,4 +1,4 @@
-class Admin::<%= class_name.pluralize %>Controller < Admin::Cms::BaseController
+class Admins::<%= class_name.pluralize %>Controller < Admins::Cms::BaseController
 
   before_action :build_<%= file_name %>,  :only => [:new, :create]
   before_action :load_<%= file_name %>,   :only => [:show, :edit, :update, :destroy]

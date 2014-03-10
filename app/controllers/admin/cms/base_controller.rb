@@ -1,4 +1,4 @@
-class Admin::Cms::BaseController < ComfortableMexicanSofa.config.base_controller.to_s.constantize
+class Admins::Cms::BaseController < ComfortableMexicanSofa.config.base_controller.to_s.constantize
 
   protect_from_forgery
 

@@ -1,4 +1,4 @@
-class Admin::FoosController < Admin::Cms::BaseController
+class Admins::FoosController < Admins::Cms::BaseController
 
   before_action :build_foo,  :only => [:new, :create]
   before_action :load_foo,   :only => [:show, :edit, :update, :destroy]

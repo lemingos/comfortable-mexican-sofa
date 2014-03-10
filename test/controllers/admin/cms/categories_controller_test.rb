@@ -1,6 +1,6 @@
 require_relative '../../../test_helper'
 
-class Admin::Cms::CategoriesControllerTest < ActionController::TestCase
+class Admins::Cms::CategoriesControllerTest < ActionController::TestCase
   
   def test_get_edit
     xhr :get, :edit, :site_id => cms_sites(:default), :id => cms_categories(:default)

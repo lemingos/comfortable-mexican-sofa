@@ -1,6 +1,6 @@
 require_relative '../../test_helper'
 
-class Admin::<%= class_name.pluralize %>ControllerTest < ActionController::TestCase
+class Admins::<%= class_name.pluralize %>ControllerTest < ActionController::TestCase
 
   def setup
     # TODO: login as admin user

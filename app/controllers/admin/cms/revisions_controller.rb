@@ -1,4 +1,4 @@
-class Admin::Cms::RevisionsController < Admin::Cms::BaseController
+class Admins::Cms::RevisionsController < Admins::Cms::BaseController
   
   before_action :load_record
   before_action :load_revision, :except => :index

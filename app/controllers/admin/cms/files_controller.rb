@@ -1,4 +1,4 @@
-class Admin::Cms::FilesController < Admin::Cms::BaseController
+class Admins::Cms::FilesController < Admins::Cms::BaseController
   
   skip_before_action :load_fixtures
   

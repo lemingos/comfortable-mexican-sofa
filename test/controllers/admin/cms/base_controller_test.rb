@@ -1,6 +1,6 @@
 require_relative '../../../test_helper'
 
-class Admin::Cms::BaseControllerTest < ActionController::TestCase
+class Admins::Cms::BaseControllerTest < ActionController::TestCase
 
   def test_get_jump
     get :jump

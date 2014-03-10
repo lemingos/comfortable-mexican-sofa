@@ -1,4 +1,4 @@
-class Admin::Cms::SitesController < Admin::Cms::BaseController
+class Admins::Cms::SitesController < Admins::Cms::BaseController
 
   skip_before_action  :load_admin_site,
                       :load_fixtures

@@ -1,4 +1,4 @@
-class Admin::Cms::CategoriesController < Admin::Cms::BaseController
+class Admins::Cms::CategoriesController < Admins::Cms::BaseController
   
   before_action :load_category,  :only => [:edit, :update, :destroy]
   

@@ -1,4 +1,4 @@
-class Admin::Cms::LayoutsController < Admin::Cms::BaseController
+class Admins::Cms::LayoutsController < Admins::Cms::BaseController
 
   before_action :build_layout,  :only => [:new, :create]
   before_action :load_layout,   :only => [:edit, :update, :destroy]

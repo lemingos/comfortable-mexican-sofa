@@ -1,4 +1,4 @@
-class Admin::Cms::PagesController < Admin::Cms::BaseController
+class Admins::Cms::PagesController < Admins::Cms::BaseController
 
   before_action :check_for_layouts, :only => [:new, :edit]
   before_action :build_cms_page,    :only => [:new, :create]

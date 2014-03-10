@@ -1,6 +1,6 @@
 require_relative '../../../test_helper'
 
-class Admin::Cms::SnippetsControllerTest < ActionController::TestCase
+class Admins::Cms::SnippetsControllerTest < ActionController::TestCase
 
   def test_get_index
     get :index, :site_id => cms_sites(:default)

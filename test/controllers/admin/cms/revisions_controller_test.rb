@@ -1,6 +1,6 @@
 require_relative '../../../test_helper'
 
-class Admin::Cms::RevisionsControllerTest < ActionController::TestCase
+class Admins::Cms::RevisionsControllerTest < ActionController::TestCase
   
   def test_get_index_for_layouts
     get :index, :site_id => cms_sites(:default), :layout_id => cms_layouts(:default)
