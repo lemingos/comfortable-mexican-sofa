@@ -9,7 +9,7 @@ ComfortableMexicanSofa.configure do |config|
 
   # Module responsible for authentication. You can replace it with your own.
   # It simply needs to have #authenticate method. See http_auth.rb for reference.
-  #   config.admin_auth = 'ComfortableMexicanSofa::HttpAuth'
+  #   config.admins_auth = 'ComfortableMexicanSofa::HttpAuth'
 
   # Module responsible for public authentication. Similar to the above. You also
   # will have access to @cms_site, @cms_layout, @cms_page so you can use them in
@@ -18,7 +18,7 @@ ComfortableMexicanSofa.configure do |config|
 
   # When arriving at /cms-admin you may chose to redirect to arbirtary path,
   # for example '/cms-admin/users'
-  #   config.admin_route_redirect = ''
+  #   config.admins_route_redirect = ''
 
   # File uploads use Paperclip and can support filesystem or s3 uploads.  Override
   # the upload method and appropriate settings based on Paperclip.  For S3 see:
@@ -58,7 +58,7 @@ ComfortableMexicanSofa.configure do |config|
 
   # Admin interface will respect the locale of the site being managed. However you can
   # force it to English by setting this to `:en`
-  #   config.admin_locale = nil
+  #   config.admins_locale = nil
 
   # If you want to keep your CMS tables in a location other than the default database
   # add a database_config. For example, setting it to 'cms' will look for a cms_#{Rails.env}
@@ -66,7 +66,7 @@ ComfortableMexicanSofa.configure do |config|
   #   config.database_config = nil
 
   # A class that is included as a sweeper to admin base controller if it's set
-  #   config.admin_cache_sweeper = nil
+  #   config.admins_cache_sweeper = nil
 
   # By default you cannot have irb code inside your layouts/pages/snippets.
   # Generally this is to prevent putting something like this:

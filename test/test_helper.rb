@@ -25,9 +25,9 @@ class ActiveSupport::TestCase
   def reset_config
     ComfortableMexicanSofa.configure do |config|
       config.cms_title            = 'ComfortableMexicanSofa CMS Engine'
-      config.admin_auth           = 'ComfortableMexicanSofa::HttpAuth'
+      config.admins_auth           = 'ComfortableMexicanSofa::HttpAuth'
       config.public_auth          = 'ComfortableMexicanSofa::DummyAuth'
-      config.admin_route_redirect = ''
+      config.admins_route_redirect = ''
       config.enable_fixtures      = false
       config.fixtures_path        = File.expand_path('db/cms_fixtures', Rails.root)
       config.revisions_limit      = 25
@@ -35,9 +35,9 @@ class ActiveSupport::TestCase
         'en' => 'English',
         'es' => 'Español'
       }
-      config.admin_locale         = nil
+      config.admins_locale         = nil
       config.upload_file_options  = { }
-      config.admin_cache_sweeper  = nil
+      config.admins_cache_sweeper  = nil
       config.allow_irb            = false
       config.allowed_helpers      = nil
       config.allowed_partials     = nil

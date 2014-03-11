@@ -2,19 +2,19 @@ require_relative '../test_helper'
 
 class SitesIntegrationTest < ActionDispatch::IntegrationTest
   
-  def test_get_admin_with_single_site
-    http_auth :get, admin_cms_path
+  def test_get_admins_with_single_site
+    http_auth :get, admins_cms_path
     assert assigns(:site)
     assert_equal cms_sites(:default), assigns(:site)
     assert_response :redirect
-    assert_redirected_to admin_cms_site_pages_path(assigns(:site))
+    assert_redirected_to admins_cms_site_pages_path(assigns(:site))
   end
   
-  def test_get_admin_with_no_site
+  def test_get_admins_with_no_site
     Cms::Site.delete_all
-    http_auth :get, admin_cms_path
+    http_auth :get, admins_cms_path
     assert_response :redirect
-    assert_redirected_to new_admin_cms_site_path
+    assert_redirected_to new_admins_cms_site_path
     assert_equal 'Site not found', flash[:error]
   end
   
@@ -89,28 +89,28 @@ class SitesIntegrationTest < ActionDispatch::IntegrationTest
     assert_equal :fr, I18n.locale
   end
   
-  def test_get_admin_with_locale
-    http_auth :get, admin_cms_site_pages_path(cms_sites(:default))
+  def test_get_admins_with_locale
+    http_auth :get, admins_cms_site_pages_path(cms_sites(:default))
     assert_response :success
     assert_equal :en, I18n.locale
     
     cms_sites(:default).update_columns(:locale => 'fr')
-    http_auth :get, admin_cms_site_pages_path(cms_sites(:default))
+    http_auth :get, admins_cms_site_pages_path(cms_sites(:default))
     assert_response :success
     assert_equal :fr, I18n.locale
   end
   
-  def test_get_admin_with_forced_locale
-    ComfortableMexicanSofa.config.admin_locale = :en
+  def test_get_admins_with_forced_locale
+    ComfortableMexicanSofa.config.admins_locale = :en
     
     cms_sites(:default).update_columns(:locale => 'fr')
-    http_auth :get, admin_cms_site_pages_path(cms_sites(:default))
+    http_auth :get, admins_cms_site_pages_path(cms_sites(:default))
     assert_response :success
     assert_equal :en, I18n.locale
 
     I18n.default_locale = :fr
     I18n.locale = :fr
-    http_auth :get, admin_cms_sites_path
+    http_auth :get, admins_cms_sites_path
     assert_response :success
     assert_equal :en, I18n.locale
 

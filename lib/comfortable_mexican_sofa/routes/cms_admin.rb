@@ -4,7 +4,7 @@ class ActionDispatch::Routing::Mapper
     options[:path] ||= 'admin'
 
     scope :module => :admins do
-      namespace :cms, :as => :admin_cms, :path => options[:path], :except => :show do
+      namespace :cms, :as => :admins_cms, :path => options[:path], :except => :show do
         get '/', :to => 'base#jump'
         resources :sites do
           resources :pages do

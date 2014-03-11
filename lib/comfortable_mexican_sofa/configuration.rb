@@ -10,14 +10,14 @@ class ComfortableMexicanSofa::Configuration
   attr_accessor :base_controller
 
   # Module that will handle authentication to access cms-admin area
-  attr_accessor :admin_auth
+  attr_accessor :admins_auth
 
   # Module that will handle authentication for public pages
   attr_accessor :public_auth
 
   # When arriving at /cms-admin you may chose to redirect to arbirtary path,
   # for example '/cms-admin/users'
-  attr_accessor :admin_route_redirect
+  attr_accessor :admins_route_redirect
 
   # Upload settings
   attr_accessor :upload_file_options
@@ -38,7 +38,7 @@ class ComfortableMexicanSofa::Configuration
 
   # Admin interface will respect the locale of the site being managed. However you can
   # force it to English by setting this to `:en`
-  attr_accessor :admin_locale
+  attr_accessor :admins_locale
 
   # Database prefix.  If you want to keep your comfortable mexican sofa tables
   # in a location other than the default databases add a database_config.
@@ -47,7 +47,7 @@ class ComfortableMexicanSofa::Configuration
   attr_accessor :database_config
 
   # A class that is included as a sweeper to admin base controller if it's set
-  attr_accessor :admin_cache_sweeper
+  attr_accessor :admins_cache_sweeper
 
   # Not allowing irb code to be run inside page content. False by default.
   attr_accessor :allow_irb
@@ -79,10 +79,10 @@ class ComfortableMexicanSofa::Configuration
   def initialize
     @cms_title            = 'ComfortableMexicanSofa CMS Engine'
     @base_controller      = 'ApplicationController'
-    @admin_auth           = 'ComfortableMexicanSofa::HttpAuth'
+    @admins_auth           = 'ComfortableMexicanSofa::HttpAuth'
     @public_auth          = 'ComfortableMexicanSofa::DummyAuth'
     @seed_data_path       = nil
-    @admin_route_redirect = ''
+    @admins_route_redirect = ''
     @enable_sitemap       = true
     @upload_file_options  = { }
     @enable_fixtures      = false
@@ -103,9 +103,9 @@ class ComfortableMexicanSofa::Configuration
       'it'    => 'Italiano',
       'da'    => 'Dansk'
     }
-    @admin_locale         = nil
+    @admins_locale         = nil
     @database_config      = nil
-    @admin_cache_sweeper  = nil
+    @admins_cache_sweeper  = nil
     @allow_irb            = false
     @allowed_helpers      = nil
     @allowed_partials     = nil

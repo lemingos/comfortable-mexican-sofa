@@ -61,7 +61,7 @@ module Comfy
           create_file partial_path
         end
         append_file partial_path do
-          "\n%li= active_link_to '#{class_name.pluralize}', admin_#{file_name.pluralize}_path\n"
+          "\n%li= active_link_to '#{class_name.pluralize}', admins_#{file_name.pluralize}_path\n"
         end
       end
     end

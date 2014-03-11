@@ -1,6 +1,6 @@
 class Admins::Cms::SitesController < Admins::Cms::BaseController
 
-  skip_before_action  :load_admin_site,
+  skip_before_action  :load_admins_site,
                       :load_fixtures
 
   before_action :build_site,  :only => [:new, :create]
@@ -23,7 +23,7 @@ class Admins::Cms::SitesController < Admins::Cms::BaseController
   def create
     @site.save!
     flash[:success] = I18n.t('cms.sites.created')
-    redirect_to admin_cms_site_layouts_path(@site)
+    redirect_to admins_cms_site_layouts_path(@site)
   rescue ActiveRecord::RecordInvalid
     flash.now[:error] = I18n.t('cms.sites.creation_failure')
     render :action => :new
@@ -53,7 +53,7 @@ protected
 
   def load_site
     @site = ::Cms::Site.find(params[:id])
-    I18n.locale = ComfortableMexicanSofa.config.admin_locale || @site.locale
+    I18n.locale = ComfortableMexicanSofa.config.admins_locale || @site.locale
   rescue ActiveRecord::RecordNotFound
     flash[:error] = I18n.t('cms.sites.not_found')
     redirect_to :action => :index

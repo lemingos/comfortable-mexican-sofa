@@ -3,41 +3,41 @@ class Admins::Cms::BaseController < ComfortableMexicanSofa.config.base_controlle
   protect_from_forgery
 
   # Authentication module must have #authenticate method
-  include ComfortableMexicanSofa.config.admin_auth.to_s.constantize
+  include ComfortableMexicanSofa.config.admins_auth.to_s.constantize
 
   before_action :authenticate,
-                :load_admin_site,
+                :load_admins_site,
                 :set_locale,
                 :load_fixtures,
                 :except => :jump
   
   layout 'admin/cms'
   
-  if ComfortableMexicanSofa.config.admin_cache_sweeper.present?
-    cache_sweeper *ComfortableMexicanSofa.config.admin_cache_sweeper
+  if ComfortableMexicanSofa.config.admins_cache_sweeper.present?
+    cache_sweeper *ComfortableMexicanSofa.config.admins_cache_sweeper
   end
   
   def jump
-    path = ComfortableMexicanSofa.config.admin_route_redirect
+    path = ComfortableMexicanSofa.config.admins_route_redirect
     return redirect_to(path) unless path.blank?
-    load_admin_site
-    redirect_to admin_cms_site_pages_path(@site) if @site
+    load_admins_site
+    redirect_to admins_cms_site_pages_path(@site) if @site
   end
   
 protected
   
-  def load_admin_site
+  def load_admins_site
     if @site = ::Cms::Site.find_by_id(params[:site_id] || session[:site_id]) || ::Cms::Site.first
       session[:site_id] = @site.id
     else
-      I18n.locale = ComfortableMexicanSofa.config.admin_locale || I18n.default_locale
+      I18n.locale = ComfortableMexicanSofa.config.admins_locale || I18n.default_locale
       flash[:error] = I18n.t('cms.base.site_not_found')
-      return redirect_to(new_admin_cms_site_path)
+      return redirect_to(new_admins_cms_site_path)
     end
   end
 
   def set_locale
-    I18n.locale = ComfortableMexicanSofa.config.admin_locale || (@site && @site.locale)
+    I18n.locale = ComfortableMexicanSofa.config.admins_locale || (@site && @site.locale)
     true
   end
 

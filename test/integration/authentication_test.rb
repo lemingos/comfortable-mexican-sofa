@@ -15,7 +15,7 @@ class AuthenticationIntegrationTest < ActionDispatch::IntegrationTest
   end
   
   def test_get_with_unauthorized_access
-    assert_equal 'ComfortableMexicanSofa::HttpAuth', ComfortableMexicanSofa.config.admin_auth
+    assert_equal 'ComfortableMexicanSofa::HttpAuth', ComfortableMexicanSofa.config.admins_auth
     get '/admin/sites'
     assert_response :unauthorized
     get '/'
@@ -28,7 +28,7 @@ class AuthenticationIntegrationTest < ActionDispatch::IntegrationTest
   end
   
   def test_get_with_changed_default_config
-    assert_equal 'ComfortableMexicanSofa::HttpAuth', ComfortableMexicanSofa.config.admin_auth
+    assert_equal 'ComfortableMexicanSofa::HttpAuth', ComfortableMexicanSofa.config.admins_auth
     ComfortableMexicanSofa::HttpAuth.username = 'newuser'
     ComfortableMexicanSofa::HttpAuth.password = 'newpass'
     http_auth :get, '/admin/sites'
