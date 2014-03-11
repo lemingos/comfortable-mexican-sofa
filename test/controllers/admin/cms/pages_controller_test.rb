@@ -55,9 +55,9 @@ class Admins::Cms::PagesControllerTest < ActionController::TestCase
     assert assigns(:page)
     assert_equal cms_layouts(:default), assigns(:page).layout
     assert_template :new
-    assert_select "form[action=/admin/sites/#{site.id}/pages]"
-    assert_select "select[data-url=/admin/sites/#{site.id}/pages/0/form_blocks]"
-    assert_select "form[action='/admin/sites/#{site.id}/files?ajax=true']"
+    assert_select "form[action=/admins/sites/#{site.id}/pages]"
+    assert_select "select[data-url=/admins/sites/#{site.id}/pages/0/form_blocks]"
+    assert_select "form[action='/admins/sites/#{site.id}/files?ajax=true']"
   end
 
   def test_get_new_with_field_datetime
@@ -230,8 +230,8 @@ class Admins::Cms::PagesControllerTest < ActionController::TestCase
     assert_response :success
     assert assigns(:page)
     assert_template :edit
-    assert_select "form[action=/admin/sites/#{page.site.id}/pages/#{page.id}]"
-    assert_select "select[data-url=/admin/sites/#{page.site.id}/pages/#{page.id}/form_blocks]"
+    assert_select "form[action=/admins/sites/#{page.site.id}/pages/#{page.id}]"
+    assert_select "select[data-url=/admins/sites/#{page.site.id}/pages/#{page.id}/form_blocks]"
   end
 
   def test_get_edit_failure

@@ -17,7 +17,7 @@ ComfortableMexicanSofa.configure do |config|
   #   config.public_auth = 'ComfortableMexicanSofa::DummyAuth'
 
   # When arriving at /cms-admin you may chose to redirect to arbirtary path,
-  # for example '/cms-admin/users'
+  # for example '/cms-admins/users'
   #   config.admins_route_redirect = ''
 
   # File uploads use Paperclip and can support filesystem or s3 uploads.  Override

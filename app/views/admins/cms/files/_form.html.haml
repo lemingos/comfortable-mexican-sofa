@@ -1,4 +1,4 @@
-= render 'admin/cms/partials/file_form_before', :object => form
+= render 'admins/cms/partials/file_form_before', :object => form
 
 = form.text_field :label
 = form.file_field :file, :multiple => @file.new_record?
@@ -10,9 +10,9 @@
 
 = form.text_area :description
 
-= render :partial => 'admin/cms/categories/form', :object => form
+= render :partial => 'admins/cms/categories/form', :object => form
 
-= render 'admin/cms/partials/file_form_after', :object => form
+= render 'admins/cms/partials/file_form_after', :object => form
 
 .form-actions
   = form.submit t(@file.new_record?? '.create' : '.update'), :class => 'btn btn-primary'

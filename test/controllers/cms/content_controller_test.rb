@@ -58,7 +58,7 @@ class Cms::ContentControllerTest < ActionController::TestCase
   end
 
   def test_show_with_app_layout
-    cms_layouts(:default).update_columns(:app_layout => 'admin/cms')
+    cms_layouts(:default).update_columns(:app_layout => 'admins/cms')
     get :show, :cms_path => ''
     assert_response :success
     assert assigns(:cms_page)

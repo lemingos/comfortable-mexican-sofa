@@ -12,18 +12,18 @@ class ScaffoldGeneratorTest < Rails::Generators::TestCase
     assert_file 'test/models/foo_test.rb',        read_file('scaffold/tests/model.rb')
     assert_file 'test/fixtures/foos.yml',         read_file('scaffold/tests/fixture')
     
-    assert_file 'app/controllers/admin/foos_controller.rb',       read_file('scaffold/controller.rb')
-    assert_file 'test/controllers/admin/foos_controller_test.rb', read_file('scaffold/tests/controller.rb')
+    assert_file 'app/controllers/admins/foos_controller.rb',       read_file('scaffold/controller.rb')
+    assert_file 'test/controllers/admins/foos_controller_test.rb', read_file('scaffold/tests/controller.rb')
     
-    assert_file 'app/views/admin/foos/index.html.haml', read_file('scaffold/views/index.haml')
-    assert_file 'app/views/admin/foos/show.html.haml',  read_file('scaffold/views/show.haml')
-    assert_file 'app/views/admin/foos/new.html.haml',   read_file('scaffold/views/new.haml')
-    assert_file 'app/views/admin/foos/edit.html.haml',  read_file('scaffold/views/edit.haml')
-    assert_file 'app/views/admin/foos/_form.html.haml', read_file('scaffold/views/_form.haml')
+    assert_file 'app/views/admins/foos/index.html.haml', read_file('scaffold/views/index.haml')
+    assert_file 'app/views/admins/foos/show.html.haml',  read_file('scaffold/views/show.haml')
+    assert_file 'app/views/admins/foos/new.html.haml',   read_file('scaffold/views/new.haml')
+    assert_file 'app/views/admins/foos/edit.html.haml',  read_file('scaffold/views/edit.haml')
+    assert_file 'app/views/admins/foos/_form.html.haml', read_file('scaffold/views/_form.haml')
     
     assert_file 'config/routes.rb', read_file('scaffold/routes.rb')
     
-    assert_file 'app/views/admin/cms/partials/_navigation_inner.html.haml' do |file|
+    assert_file 'app/views/admins/cms/partials/_navigation_inner.html.haml' do |file|
       assert_match "%li= active_link_to 'Foos', admins_foos_path", file
     end
   end

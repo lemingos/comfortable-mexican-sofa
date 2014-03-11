@@ -36,16 +36,16 @@ module Comfy
       end
       
       def generate_controller
-        template 'controller.rb', "app/controllers/admin/#{file_name.pluralize}_controller.rb"
-        template 'tests/controller.rb', "test/controllers/admin/#{file_name.pluralize}_controller_test.rb"
+        template 'controller.rb', "app/controllers/admins/#{file_name.pluralize}_controller.rb"
+        template 'tests/controller.rb', "test/controllers/admins/#{file_name.pluralize}_controller_test.rb"
       end
       
       def generate_views
-        template 'views/index.haml', "app/views/admin/#{file_name.pluralize}/index.html.haml"
-        template 'views/show.haml', "app/views/admin/#{file_name.pluralize}/show.html.haml"
-        template 'views/new.haml', "app/views/admin/#{file_name.pluralize}/new.html.haml"
-        template 'views/edit.haml', "app/views/admin/#{file_name.pluralize}/edit.html.haml"
-        template 'views/_form.haml', "app/views/admin/#{file_name.pluralize}/_form.html.haml"
+        template 'views/index.haml', "app/views/admins/#{file_name.pluralize}/index.html.haml"
+        template 'views/show.haml', "app/views/admins/#{file_name.pluralize}/show.html.haml"
+        template 'views/new.haml', "app/views/admins/#{file_name.pluralize}/new.html.haml"
+        template 'views/edit.haml', "app/views/admins/#{file_name.pluralize}/edit.html.haml"
+        template 'views/_form.haml', "app/views/admins/#{file_name.pluralize}/_form.html.haml"
       end
       
       def generate_route
@@ -56,7 +56,7 @@ module Comfy
       end
       
       def generate_navigation_link
-        partial_path = 'app/views/admin/cms/partials/_navigation_inner.html.haml'
+        partial_path = 'app/views/admins/cms/partials/_navigation_inner.html.haml'
         unless File.exist?(File.join(destination_root, partial_path))
           create_file partial_path
         end

@@ -11,11 +11,11 @@
     .category.all{:class => params[:category].blank?? 'active' : nil}
       = link_to t('.all'), :category => nil
     - @site.categories.of_type(type).each do |category|
-      = render :partial => 'admin/cms/categories/show', :object => category, :locals => { :read => true }
+      = render :partial => 'admins/cms/categories/show', :object => category, :locals => { :read => true }
   
   .categories.editable
     - @site.categories.of_type(type).each do |category|
-      = render :partial => 'admin/cms/categories/show', :object => category
+      = render :partial => 'admins/cms/categories/show', :object => category
     
     = form_for :category, :url => admins_cms_site_categories_path(@site), :remote => true, :html => {:id => 'new_category'} do |form|
       = form.hidden_field :categorized_type, :value => type

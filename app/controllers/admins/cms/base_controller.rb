@@ -11,7 +11,7 @@ class Admins::Cms::BaseController < ComfortableMexicanSofa.config.base_controlle
                 :load_fixtures,
                 :except => :jump
   
-  layout 'admin/cms'
+  layout 'admins/cms'
   
   if ComfortableMexicanSofa.config.admins_cache_sweeper.present?
     cache_sweeper *ComfortableMexicanSofa.config.admins_cache_sweeper
@@ -43,7 +43,7 @@ protected
 
   def load_fixtures
     return unless ComfortableMexicanSofa.config.enable_fixtures
-    if %w(admin/cms/layouts admin/cms/pages admin/cms/snippets).member?(params[:controller])
+    if %w(admins/cms/layouts admins/cms/pages admins/cms/snippets).member?(params[:controller])
       ComfortableMexicanSofa::Fixture::Importer.new(@site.identifier).import!
       flash.now[:error] = I18n.t('cms.base.fixtures_enabled')
     end

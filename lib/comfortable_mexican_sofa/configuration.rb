@@ -16,7 +16,7 @@ class ComfortableMexicanSofa::Configuration
   attr_accessor :public_auth
 
   # When arriving at /cms-admin you may chose to redirect to arbirtary path,
-  # for example '/cms-admin/users'
+  # for example '/cms-admins/users'
   attr_accessor :admins_route_redirect
 
   # Upload settings

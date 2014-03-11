@@ -61,7 +61,7 @@ class Admins::Cms::FilesControllerTest < ActionController::TestCase
     assert_response :success
     assert assigns(:file)
     assert_template :new
-    assert_select "form[action=/admin/sites/#{site.id}/files][enctype=multipart/form-data]"
+    assert_select "form[action=/admins/sites/#{site.id}/files][enctype=multipart/form-data]"
   end
   
   def test_get_edit
@@ -70,7 +70,7 @@ class Admins::Cms::FilesControllerTest < ActionController::TestCase
     assert_response :success
     assert assigns(:file)
     assert_template :edit
-    assert_select "form[action=/admin/sites/#{file.site.id}/files/#{file.id}]"
+    assert_select "form[action=/admins/sites/#{file.site.id}/files/#{file.id}]"
   end
   
   def test_get_edit_failure

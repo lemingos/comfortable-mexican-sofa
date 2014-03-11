@@ -22,7 +22,7 @@ class Admins::Cms::SitesControllerTest < ActionController::TestCase
     assert assigns(:site)
     assert_equal 'test.host', assigns(:site).hostname
     assert_template :new
-    assert_select 'form[action=/admin/sites]'
+    assert_select 'form[action=/admins/sites]'
   end
 
   def test_get_edit
@@ -31,7 +31,7 @@ class Admins::Cms::SitesControllerTest < ActionController::TestCase
     assert_response :success
     assert assigns(:site)
     assert_template :edit
-    assert_select "form[action=/admin/sites/#{site.id}]"
+    assert_select "form[action=/admins/sites/#{site.id}]"
   end
 
   def test_get_edit_failure

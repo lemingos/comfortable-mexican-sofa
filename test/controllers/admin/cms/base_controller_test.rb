@@ -9,10 +9,10 @@ class Admins::Cms::BaseControllerTest < ActionController::TestCase
   end
   
   def test_get_jump_with_redirect_setting
-    ComfortableMexicanSofa.config.admins_route_redirect = '/cms-admin/sites'
+    ComfortableMexicanSofa.config.admins_route_redirect = '/cms-admins/sites'
     get :jump
     assert_response :redirect
-    assert_redirected_to '/cms-admin/sites'
+    assert_redirected_to '/cms-admins/sites'
   end
 
 end

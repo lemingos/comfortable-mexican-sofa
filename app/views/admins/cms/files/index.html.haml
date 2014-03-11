@@ -2,9 +2,9 @@
   = link_to t('.new_link'), new_admins_cms_site_file_path(@site), :class => 'btn pull-right'
   %h2= t('.title')
   
-= render 'admin/cms/partials/files_before'
+= render 'admins/cms/partials/files_before'
 
-= render :partial => 'admin/cms/categories/index', :object => 'Cms::File'
+= render :partial => 'admins/cms/categories/index', :object => 'Cms::File'
 
 %table.table.table-hover.table-bordered
   %tbody.sortable
@@ -20,7 +20,7 @@
         %td.main
           .item-title
             = link_to file.label, edit_admins_cms_site_file_path(@site, file)
-            = render :partial => '/admin/cms/categories/categories', :object => file
+            = render :partial => '/admins/cms/categories/categories', :object => file
           .item-meta
             = link_to file.file_file_name, file.file.url, :target => '_blank'
             
@@ -29,4 +29,4 @@
             = link_to t('.edit'), edit_admins_cms_site_file_path(@site, file), :class => 'btn btn-small'
             = link_to t('.delete'), admins_cms_site_file_path(@site, file), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small btn-danger'
 
-= render 'admin/cms/partials/files_after'
+= render 'admins/cms/partials/files_after'

@@ -26,7 +26,7 @@
     .item-content
       .item-title
         = link_to page.label, edit_admins_cms_site_page_path(@site, page), :class => 'item-label'
-        = render :partial => '/admin/cms/categories/categories', :object => page
+        = render :partial => '/admins/cms/categories/categories', :object => page
       .item-meta
         = link_to page.url, page.url, :target => '_blank'
         

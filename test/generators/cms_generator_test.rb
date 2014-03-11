@@ -15,9 +15,9 @@ class CmsGeneratorTest < Rails::Generators::TestCase
     
     assert_directory 'db/cms_fixtures'
     
-    assert_file 'app/assets/javascripts/comfortable_mexican_sofa/admin/application.js'
+    assert_file 'app/assets/javascripts/comfortable_mexican_sofa/admins/application.js'
     
-    assert_file 'app/assets/stylesheets/comfortable_mexican_sofa/admin/application.css'
+    assert_file 'app/assets/stylesheets/comfortable_mexican_sofa/admins/application.css'
   end
 
 end

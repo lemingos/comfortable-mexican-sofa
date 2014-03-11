@@ -3,11 +3,11 @@
   %h2= t('.title')
 
 - content_for :right_column do
-  = render :partial => 'admin/cms/sites/mirrors'
+  = render :partial => 'admins/cms/sites/mirrors'
 
-= render 'admin/cms/partials/layouts_before'
+= render 'admins/cms/partials/layouts_before'
 
 %ul.list.sortable
   = render :partial => 'index_branch', :collection => @layouts
 
-= render 'admin/cms/partials/layouts_after'
+= render 'admins/cms/partials/layouts_after'

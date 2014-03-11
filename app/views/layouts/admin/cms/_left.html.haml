@@ -1,7 +1,7 @@
-= render '/admin/cms/partials/navigation_before'
+= render '/admins/cms/partials/navigation_before'
 
 %ul.navigation
-  %li= active_link_to t('admin.cms.base.sites'), admins_cms_sites_path, :active => ['admin/cms/sites']
+  %li= active_link_to t('admin.cms.base.sites'), admins_cms_sites_path, :active => ['admins/cms/sites']
   
   - if @site && !@site.new_record?
     %li= active_link_to t('admin.cms.base.layouts'), admins_cms_site_layouts_path(@site)
@@ -11,6 +11,6 @@
     
   = cms_hook :navigation
     
-  = render '/admin/cms/partials/navigation_inner'
+  = render '/admins/cms/partials/navigation_inner'
     
-= render '/admin/cms/partials/navigation_after'
+= render '/admins/cms/partials/navigation_after'

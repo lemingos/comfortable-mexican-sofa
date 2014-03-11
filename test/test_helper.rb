@@ -109,7 +109,7 @@ class ActionDispatch::IntegrationTest
   end
   
   # Attaching http_auth stuff with request. Example use:
-  #   http_auth :get, '/cms-admin/pages'
+  #   http_auth :get, '/cms-admins/pages'
   def http_auth(method, path, options = {}, username = 'username', password = 'password')
     send(method, path, options, {'HTTP_AUTHORIZATION' => "Basic #{Base64.encode64(username + ':' + password)}"})
   end
