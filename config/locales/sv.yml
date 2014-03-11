@@ -98,7 +98,7 @@ sv:
       page_not_found: Kunde inte hitta sida
   
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Sites

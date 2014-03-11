@@ -98,7 +98,7 @@ pl:
       page_not_found: Strona nie została znaleziona
   
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Witryny

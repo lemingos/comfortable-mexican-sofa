@@ -98,7 +98,7 @@ de:
       page_not_found: Seite nicht gefunden
 
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Web-Sites

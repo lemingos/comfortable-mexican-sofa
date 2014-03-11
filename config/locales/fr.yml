@@ -98,7 +98,7 @@ fr:
       page_not_found: Page introuvable
   
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Sites

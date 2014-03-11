@@ -98,7 +98,7 @@ da:
       page_not_found: Side findes ikke
   
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Websteder

@@ -98,7 +98,7 @@ es:
       page_not_found: Página no encontrada
 
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Sitios

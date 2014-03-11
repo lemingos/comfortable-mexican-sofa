@@ -98,7 +98,7 @@ nl:
       page_not_found: Pagina niet gevonden
 
   # -- Views ----------------------------------------------------------------
-  admin:
+  admins:
     cms:
       base:
         sites: Sites
